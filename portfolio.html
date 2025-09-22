@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Abah - Programmer Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .light-mode {
+            background-color: #dde6dd;
+            color: #333;
+        }
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #25652a, #949694);
+        }
+        .dark-mode header {
+            background: linear-gradient(135deg, #390a4f, #075985);
+        }
+        #profile-pic {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            border: 3px solid #0d0707;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        nav {
+            text-align: center;
+            padding: 20px;
+        }
+        nav button {
+            padding: 10px 20px;
+            margin: 5px;
+            background: #16721e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .dark-mode nav button {
+            background: #3f1660;
+        }
+        nav button:hover {
+            opacity: 0.9;
+        }
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            display: none; /* Hidden by default */
+        }
+        section.active {
+            display: block; /* Show when clicked */
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #1c1e20;
+            display: inline-block;
+        }
+        .dark-mode h2 {
+            border-bottom-color: #dfe6e8;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .skills-grid li {
+            background: #e0f7ff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .dark-mode .skills-grid li {
+            background: #2a3b4c;
+        }
+        .project-card {
+            background: #fff;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .dark-mode .project-card {
+            background: #2a2a2a;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+        }
+        .contact-links a {
+            color: #007bff;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 1.1em;
+        }
+        .dark-mode .contact-links a {
+            color: #00c4ff;
+        }
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+        #mode-toggle {
+            position: fixed;
+            top: 10px;
+            right: 50px;
+            padding: 10px 15px;
+            background: #0a0c0d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .dark-mode #mode-toggle {
+            background: #aab0b1;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            #profile-pic {
+                width: 100px;
+                height: 100px;
+            }
+            nav button {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <button id="mode-toggle">Switch to Dark Mode</button>
+
+    <header>
+        <img id="profile-pic" src="profile-pic.jpg" alt="Joseph Abah's Profile Picture">
+        <h1 id="greeting">Good Evening!</h1>
+        <p>a programmer passionate about building solutions with code, exploring new techonologies, and solving real-world problems</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('about')">About</button>
+        <button onclick="showSection('skills')">Skills</button>
+        <button onclick="showSection('projects')">Projects</button>
+        <button onclick="showSection('contact')">Contact</button>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello, I'm Joseph Abah, a dedicated programmer with a passion for creating innovative and efficient solutions. With a strong foundation in web development and software engineering, I enjoy tackling complex challenges and continuously expanding my skill set.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills-grid">
+            <li>JavaScript</li>
+            <li>HTML/CSS</li>
+            <li>Python</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>SQL</li>
+            <li>Git</li>
+            <li>API Development</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>Task Manager App</h3>
+            <p>A web application for managing tasks, built with React and Firebase. Features user authentication and real-time updates.</p>
+        </div>
+        <div class="project-card">
+            <h3>E-Commerce Platform</h3>
+            <p>An online store developed using Node.js and MongoDB, with secure payment integration and product filtering.</p>
+        </div>
+        <div class="project-card">
+            <h3>Image Recognition Model</h3>
+            <p>A machine learning project using Python and TensorFlow to classify images with high accuracy.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-links">
+            <a href="https://www.facebook.com/josephabah_" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            <a href="mailto:josephabah833@gmail.com">Email</a>
+        </div>
+    </section>
+
+    <script>
+        // Time-based greeting adjusted for WAT (UTC+1)
+        function updateGreeting() {
+            const hour = new Date().getHours(); // Client-side time
+            let greeting;
+            if (hour < 12) {
+                greeting = "Good Morning!";
+            } else if (hour < 18) {
+                greeting = "Good Afternoon!";
+            } else {
+                greeting = "Good Evening!";
+            }
+            document.getElementById('greeting').textContent = greeting + " I'm Joseph Abah.";
+        }
+        updateGreeting();
+
+        // Toggle section visibility
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Dark/Light mode toggle
+        const body = document.body;
+        const toggleButton = document.getElementById('mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                toggleButton.textContent = 'Switch to Light Mode';
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                toggleButton.textContent = 'Switch to Dark Mode';
+            }
+        });
+    </script>
+</body>
+</html>
